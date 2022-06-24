@@ -1,5 +1,4 @@
 const ramenMenu = document.querySelector("#ramen-menu");
-// let ramenTest 
 
 getAllRamen();
 formEventListener();
@@ -12,8 +11,7 @@ function getAllRamen(){
 
 function ramenItems(ramenArr){
     ramenArr.forEach(ramen => {
-       //helper function to create image
-        renderImage(ramen);
+             renderImage(ramen);
     })
 }
 
@@ -25,8 +23,7 @@ function renderImage(ramen){
     ramenMenu.append(img)
 
     img.addEventListener("click", function(e){
-        //helper method to get fetch with id request 
-        getRamen(e.target.dataset.id);
+            getRamen(e.target.dataset.id);
     })
 }
 
@@ -39,8 +36,7 @@ function getRamen(ramenId){
 }
 
 function renderDetails(ramen){
-    // const ramenDetail = document.querySelector("#ramen-detail");
-    const img = document.querySelector(".detail-image");
+       const img = document.querySelector(".detail-image");
     const h2 = document.querySelector(".name");
     const h3 = document.querySelector(".restaurant");
     const ratingInput = document.querySelector("#rating")
@@ -60,11 +56,9 @@ function formEventListener(){
     const ramenForm = document.querySelector("#ramen-rating")
     ramenForm.addEventListener("submit", function(e) {
         e.preventDefault();
-        // console.log(e);
-        const newRating = document.querySelector("#rating").value
+               const newRating = document.querySelector("#rating").value
         const newComment = document.querySelector("#comment").value
-        // const r = e.target.rating.value    
-        const updatedObj = {
+               const updatedObj = {
             id: parseInt(ramenForm.dataset.id),
             rating: newRating,
             comment: newComment
